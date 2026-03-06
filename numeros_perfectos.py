@@ -7,7 +7,7 @@ if limite_inicial > limite_final:
     print(f"El limite inicial debe ser menor al limite final")
     exit()
 if limite_inicial < 0:
-    print(f"El reango solo permite numeros positivos")
+    print(f"El rango solo permite numeros positivos")
     exit()
 
 print(f"Buscando números perfectos desde {limite_inicial} hasta {limite_final}...")
