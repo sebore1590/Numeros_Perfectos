@@ -1,47 +1,47 @@
 import json
 
-def pedirNumeros():
-    limiteInicial = int(input("Ingrese desde que numero desea buscar números perfectos: "))
-    limiteFinal = int(input("Ingrese hasta que limite desea buscar números perfectos: "))
+def pedir_numeros():
+    limite_inicial = int(input("Ingrese desde que numero desea buscar números perfectos: "))
+    limite_final = int(input("Ingrese hasta que limite desea buscar números perfectos: "))
 
-    if limiteInicial > limiteFinal:
+    if limite_inicial > limite_final:
         print("El limite inicial debe ser menor al limite final")
         exit()
 
-    if limiteInicial < 0:
+    if limite_inicial < 0:
         print("El rango solo permite numeros positivos")
         exit()
 
-    return limiteInicial, limiteFinal
+    return limite_inicial, limite_final
 
-def calculaNumerosPerfectos(limiteInicial, limiteFinal):
+def calculaNumerosPerfectos(limite_inicial, limite_final):
 
     numerosPerfectos = []
 
-    for num in range(limiteInicial, limiteFinal + 1):
+    for num in range(limite_inicial, limite_final + 1):
 
-        sumaDivisores = 0
+        suma_divisores = 0
 
         for i in range(1, (num // 2) + 1):
             if num % i == 0:
-                sumaDivisores += i
+                suma_divisores += i
 
-        if sumaDivisores == num:
+        if suma_divisores == num:
             print(f"Numero perfecto encontrado: {num}")
             numerosPerfectos.append(num)
 
     return numerosPerfectos
 
-limiteInicial, limiteFinal = pedirNumeros()
+limite_inicial, limite_final = pedir_numeros()
 
-print(f"Buscando numeros perfectos desde {limiteInicial} hasta {limiteFinal}")
+print(f"Buscando numeros perfectos desde {limite_inicial} hasta {limite_final}")
 
-numerosPerfectos = calculaNumerosPerfectos(limiteInicial, limiteFinal)
+numerosPerfectos = calculaNumerosPerfectos(limite_inicial, limite_final)
 
 print(f"Los numeros perfectos son: {numerosPerfectos}")
 
 datos = {
-    "limite_busqueda": f"{limiteInicial} - {limiteFinal}",
+    "limite_busqueda": f"{limite_inicial} - {limite_final}",
     "numeros_perfectos": numerosPerfectos
 }
 
